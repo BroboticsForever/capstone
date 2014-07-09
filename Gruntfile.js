@@ -126,4 +126,31 @@ module.exports = function(grunt) {
     // For Heroku users only.
     // Docs: https://github.com/linnovate/mean/wiki/Deploying-on-Heroku
     grunt.registerTask('heroku:production', ['cssmin', 'uglify']);
+
+    grunt.registerTask('available_tasks', 'List all available tasks', function(sorted) {
+        var done = this.async(), availableTasks = [];
+
+        sorted = (sorted !== 'false') ? true : false;
+
+        for (var task in grunt.task._tasks) {
+            availableTasks.push(task);
+        }
+
+        if (sorted) {
+            availableTasks.sort(function (a, b) {
+                var textA = a.toUpperCase(),
+                    textB = b.toUpperCase();
+
+                return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+            });
+        }
+
+        availableTasks.forEach(function(task) {
+            console.log(task);
+        });
+
+        console.log("\nThere are " + availableTasks.length + " available for use.");
+
+        done();
+    });
 };
