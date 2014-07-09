@@ -3,7 +3,7 @@
   "description": "MEAN.io: A fullstack JavaScript framework powered by MongoDB, ExpressJS, AngularJS, NodeJS.",
   "version": "0.4.0",
   "private": false,
-  "author": "Linnovate <mean@linnovate.net>",
+  "author": "Ian Tait <thetaiter@ku.edu>",
   "contributors": [
     {
       "name": "Lior Kesos",
@@ -24,12 +24,16 @@
     {
       "name": "Amos Haviv",
       "mail": "mail@amoshaviv.com"
+    },
+    {
+      "name": "Ian Tait",
+      "mail": "thetaiter@ku.edu"
     }
   ],
   "mean": "0.4.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/linnovate/mean.git"
+    "url": "https://github.com/broboticsforever/website.git"
   },
   "engines": {
     "node": "0.10.x",
