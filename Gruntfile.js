@@ -149,7 +149,7 @@ module.exports = function(grunt) {
             console.log(task);
         });
 
-        console.log("\nThere are " + availableTasks.length + " available for use.");
+        console.log('\nThere are ' + availableTasks.length + ' available for use.');
 
         done();
     });
