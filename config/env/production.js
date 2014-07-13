@@ -6,8 +6,8 @@ module.exports = {
         name: 'Brobotics'
     },
     facebook: {
-        clientID: 'APP_ID',
-        clientSecret: 'APP_SECRET',
+        clientID: '253511538183217',
+        clientSecret: '262c93e774a153ebbedc346ad4974414',
         callbackURL: 'http://localhost:3000/auth/facebook/callback'
     },
     twitter: {
