@@ -8,7 +8,7 @@ module.exports = {
     facebook: {
         clientID: '253511538183217',
         clientSecret: '262c93e774a153ebbedc346ad4974414',
-        callbackURL: 'http://localhost:3000/auth/facebook/callback'
+        callbackURL: 'http://saucyforest.com:3000/auth/facebook/callback'
     },
     twitter: {
         clientID: 'CONSUMER_KEY',
