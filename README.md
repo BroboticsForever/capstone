@@ -11,7 +11,7 @@ MEAN is a boilerplate that provides a nice starting point for [MongoDB](http://w
 
 ### Tools Prerequisites
 * NPM - Node.js package manage; should be installed when you install node.js.    
-    * If not: ``` $ sudo spt-get install npm ```
+    * If not: ``` $ sudo apt-get install npm ```
 * Bower - Web package manager. Installing [Bower](http://bower.io/) is simple when you have `npm`:
 
 ```
