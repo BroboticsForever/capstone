@@ -6,8 +6,8 @@
 MEAN is a boilerplate that provides a nice starting point for [MongoDB](http://www.mongodb.org/), [Node.js](http://www.nodejs.org/), [Express](http://expressjs.com/), and [AngularJS](http://angularjs.org/) based applications. It is designed to give you a quick and organized way to start developing MEAN based web apps with useful modules like Mongoose and Passport pre-bundled and configured. We mainly try to take care of the connection points between existing popular frameworks and solve common integration problems.
 
 ## Prerequisites
-* Node.js - ``` $ sudo apt-get install nodejs-legacy ```
-* MongoDB - Download and Install [MongoDB](http://docs.mongodb.org/manual/installation/) - Make sure `mongod` is running on the default port (27017).
+* Node.js - Ubuntu: ``` $ sudo apt-get install nodejs-legacy ```
+* MongoDB - Ubuntu: [Install Mongo](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/)
 
 ### Tools Prerequisites
 * NPM - Node.js package manage; should be installed when you install node.js.
