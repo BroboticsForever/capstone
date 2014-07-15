@@ -208,7 +208,11 @@ NEVER do this on the 'release' or 'master' branches. It will probably complain t
 
 NEVER Type 'release' or 'master' for `<yourBranchName>`! Also, never type this command at all from the 'release' or 'master' branches, this will do very bad things.
 
-Once you have made all of your changes and wish to push your changes to the 'release' branch, you will need to issue a Pull Request. Click [here](https://github.com/broboticsforever/website) to go to GitHub and then switch to your branch by clicking 'branches' and clicking on your branch.  Then you should click on the little green button on the left side next to your branch name.
+Once you have made all of your changes and wish to push your changes to the 'release' branch, you will need to issue a Pull Request. Click [here](https://github.com/broboticsforever/website) to go to GitHub and then click on the little green button on the left side next to your branch name (should be on master). You will then have to select 'release' as the base (left) and '<yourBranchName>' as the compare (right) branch. You should then be able to see all of the changes that are within your branch and how they will change the 'release' branch. If all looks good, click the green 'Create pull request' button. Give the pull request a meaningful title that is short but descriptive of the changes you made.  If you need to give further detail, explain in the comment box what you did and how to test that it works. Also, so that others on your team and check off your pull request, place the following in your comment box:
+
+    - [ ] @<username>
+    
+Do this for each team member you wish to review your code. When you are finished, click 'Create pull request' and then you are done until someone merges your branch into release!
 
 ## Getting Started
 We pre-included an article package example. Check out:
