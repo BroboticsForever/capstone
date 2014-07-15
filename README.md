@@ -10,8 +10,8 @@ MEAN is a boilerplate that provides a nice starting point for [MongoDB](http://w
 * MongoDB - Ubuntu: [Install Mongo](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/)
 
 ### Tools Prerequisites
-* NPM - Node.js package manage; should be installed when you install node.js.
-        If not: ``` $ sudo spt-get install npm ```
+* NPM - Node.js package manage; should be installed when you install node.js.    
+    * If not: ``` $ sudo spt-get install npm ```
 * Bower - Web package manager. Installing [Bower](http://bower.io/) is simple when you have `npm`:
 
 ```
@@ -147,13 +147,11 @@ First, you will need to set up git if you haven't already:
 
 Then, add this snippet of code to your `~/.bashrc` file (`~/.profile` for MAC OS X):
 
-    ```
     parse_git_branch() {
         git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
     }
     
     export PS1="\u@\h \[\033[32m\]\w -\$(parse_git_branch)\[\033[00m\] $ "
-    ```
     
 This will change the look of your console so that you can always see which git branch you are on without having to run `git branch` all the time. Once you save the file, reset your console with the `reset` command.
 
@@ -210,7 +208,7 @@ NEVER do this on the 'release' or 'master' branches. It will probably complain t
 
 NEVER Type 'release' or 'master' for `<yourBranchName>`! Also, never type this command at all from the 'release' or 'master' branches, this will do very bad things.
 
-Once you have made all of your changes and wish to push your changes to the 'release' branch, you will need to issue a Pull Request. Click [here](https://github.com/broboticsforever/website) to go to GitHub and then switch to your branch by clicking 'branches' and clicking on your branch.
+Once you have made all of your changes and wish to push your changes to the 'release' branch, you will need to issue a Pull Request. Click [here](https://github.com/broboticsforever/website) to go to GitHub and then switch to your branch by clicking 'branches' and clicking on your branch.  Then you should click on the little green button on the left side next to your branch name.
 
 ## Getting Started
 We pre-included an article package example. Check out:
