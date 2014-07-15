@@ -138,19 +138,82 @@ To simply run tests
 
 > NOTE: Running Node.js applications in the __production__ environment enables caching, which is disabled by default in all other environments.
 
-## Maintaining your own repository
-After initializing a project, you'll see that the root directory of your project is already a git repository. MEAN uses git to download and update its own code. To handle its own operations, MEAN creates a remote called `upstream`. This way you can use git as you would in any other project.
+## Maintaining your own git repository
+First, you will need to set up git if you haven't already:
 
-To maintain your own public or private repository, add your repository as remote. See here for information on [adding an existing project to GitHub](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line).
+    $ git config --global user.name "Your Name"
+    $ git config --global user.email "your@email.com"
+    $ git config --global push.default simple         // THIS ONE IS IMPORTANT SO YOU DO NOT DESTROY THE WORLD (aka the Brobotics repo)
 
-```
-git remote add origin <remote repository URL>
-git push -u origin master
-```
+Then, add this snippet of code to your `~/.bashrc` file (`~/.profile` for MAC OS X):
 
+    ```
+    parse_git_branch() {
+        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+    }
+    
+    export PS1="\u@\h \[\033[32m\]\w -\$(parse_git_branch)\[\033[00m\] $ "
+    ```
+    
+This will change the look of your console so that you can always see which git branch you are on without having to run `git branch` all the time. Once you save the file, reset your console with the `reset` command.
+
+!ATTENTION! DO NOT EVER MAKE CHANGES WHILE ON THE 'master' or 'release' BRANCHES
+All of the commands below must be run from the root directory of this repository (website).
+
+To check all of the branches you have locally:
+
+    $ git branch
+
+The branch with a * next to it is your current branch. The first thing you should do is make sure you have both the 'master' and 'release' branches. Initially, you will only have master, so to get the 'release' branch:
+
+    $ git checkout release
+    
+Then, once you want to make changes to the code, first always check that you have the latest version of the 'release' branch:
+
+    $ git pull
+    
+Once you have the latest version, you can make the changes you need to, but do them on a separate branch off of 'release':
+
+    $ git branch <newBranchName>    // Creates a new branch
+    $ git checkout <newBranchName>  // Switches you to your new branch. Before this, you are still on 'release'
+
+Alternatively, a single command equivalent of the above is:
+
+    $ git checkout -b <newBranchName> // Creates a new branch and switches you to it
+    
+If you are making many changes that are unrelated, please make each change on a separate branch and issue them as separate Pull Requests on [GitHub](https://github.com/broboticsforever/website) (This will be explained further if you read on).
+
+Once your changes are finished and you have tested them extensively, you will need to check that you haven't made any changes you do not wish to commit.
+
+    $ git status
+    
+This command will show you all of the files that you have made changes to that are not staged for commit yet, and also all the files that are currently staged for commit. If you wish to see the specific changes within the files, use the following command:
+
+    $ git diff
+    
+This command will show you all the changes you have made since your last `git add`. Use the up and down arrow keys and check everything to make sure you haven't changed anything you didn't want to by accident. If you wish to see the changes only to a specific file, use the following command:
+
+    $ git diff /path/to/file
+
+If all looks good, stage your changes:
+
+    $ git add .                 // This adds all changes to all files to the git staging area.
+    $ git add ./path/to/file    // This adds all the changes to a specific file to the staging area
+
+You can now push your branch to [GitHub](https://github.com/broboticsforever/website) with the following command:
+
+    $ git push
+    
+NEVER do this on the 'release' or 'master' branches. It will probably complain that there is not a remote branch to push to, but git should spit out the command you should type to fix the problem. If not:
+
+    $ git push --set-upstream origin <yourBranchName>
+
+NEVER Type 'release' or 'master' for `<yourBranchName>`! Also, never type this command at all from the 'release' or 'master' branches, this will do very bad things.
+
+Once you have made all of your changes and wish to push your changes to the 'release' branch, you will need to issue a Pull Request. Click [here](https://github.com/broboticsforever/website) to go to GitHub and then switch to your branch by clicking 'branches' and clicking on your branch.
 
 ## Getting Started
-We pre-included an article example. Check out:
+We pre-included an article package example. Check out:
 
   * [The Model](packages/articles/server/models/article.js) - Where we define our object schema.
   * [The Controller](packages/articles/server/controllers/articles.js) - Where we take care of our backend logic.
