@@ -11,6 +11,7 @@ MEAN is a boilerplate that provides a nice starting point for [MongoDB](http://w
 
 ### Tools Prerequisites
 * NPM - Node.js package manage; should be installed when you install node.js.
+        If not: ``` $ sudo spt-get install npm ```
 * Bower - Web package manager. Installing [Bower](http://bower.io/) is simple when you have `npm`:
 
 ```
@@ -23,7 +24,7 @@ $ npm install -g bower
 $ npm install -g grunt-cli
 ```
 
-## Additional Packages
+## Additional Packages (Included)
 * Express - Defined as npm module in the [package.json](package.json) file.
 * Mongoose - Defined as npm module in the [package.json](package.json) file.
 * Passport - Defined as npm module in the [package.json](package.json) file.
@@ -32,13 +33,15 @@ $ npm install -g grunt-cli
 * UI Bootstrap - Defined as bower module in the [bower.json](bower.json) file.
 
 ## Quick Install
-  The quickest way to get started with MEAN is to install the `meanio` package from NPM.
+  Setup Brobotics Repo for Development (Ubuntu):
 
-  Install MEAN CLI:
-
-    $ [sudo] npm install -g meanio@latest
-    $ mean init <myApp>
-    $ cd <myApp> && npm install
+    $ sudo apt-get install git
+    $ mkdir ~/broboticsforever
+    $ cd ~/broboticsforever
+    $ git clone https://github.com/broboticsforever/website.git
+    $ cd website
+    $ sudo npm install
+    $ bower install
 
   We recommend using [Grunt](https://github.com/gruntjs/grunt-cli) to start the server:
 
@@ -48,7 +51,7 @@ $ npm install -g grunt-cli
 
     $ grunt -f
 
-  Alternatively, when not using `grunt` you can run:
+  Alternatively, when not using `grunt` you can run this from the main directory:
 
     $ node server
 
