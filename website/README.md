@@ -39,7 +39,7 @@ $ npm install -g grunt-cli
     $ mkdir ~/broboticsforever
     $ cd ~/broboticsforever
     $ git clone https://github.com/broboticsforever/website.git
-    $ cd website
+    $ cd website/website
     $ sudo npm install
     $ bower install
 
