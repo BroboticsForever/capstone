@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-    db: 'mongodb://localhost/mean-prod',
+    db: 'mongodb://<dbuser>:<dbpassword>@ds055699.mongolab.com:55699/mean-prod',
     app: {
         name: 'Brobotics'
     },
