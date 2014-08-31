@@ -198,6 +198,12 @@ If all looks good, stage your changes:
     $ git add .                 // This adds all changes to all files to the git staging area.
     $ git add ./path/to/file    // This adds all the changes to a specific file to the staging area
 
+After adding files to the staging area, if you would like to push them up to the remote branch, you must commit the changes first. In order to commit the changes, use the following command:
+
+```
+$ git commit -m "Meaningful message about this commit"
+```
+   
 You can now push your branch to [GitHub](https://github.com/broboticsforever/website) with the following command:
 
     $ git push
