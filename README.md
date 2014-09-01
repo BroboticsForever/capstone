@@ -143,7 +143,7 @@ First, you will need to set up git if you haven't already:
 
     $ git config --global user.name "Your Name"
     $ git config --global user.email "your@email.com"
-    $ git config --global push.default simple         // THIS ONE IS IMPORTANT SO YOU DO NOT DESTROY THE WORLD (aka the Brobotics repo)
+    $ git config --global push.default simple         // THIS ONE IS IMPORTANT SO YOU DO NOT DESTROY THINGS
 
 Then, add this snippet of code to your `~/.bashrc` file (`~/.profile` for MAC OS X):
 
@@ -153,7 +153,7 @@ Then, add this snippet of code to your `~/.bashrc` file (`~/.profile` for MAC OS
     
     export PS1="\u@\h \[\033[32m\]\w -\$(parse_git_branch)\[\033[00m\] $ "
     
-This will change the look of your console so that you can always see which git branch you are on without having to run `git branch` all the time. Once you save the file, reset your console with the `reset` command.
+This will change the look of your console so that you can always see which git branch you are on without having to run `git branch` all the time. Once you save the file, load the settings with this command: `source ~/.bashrc`.
 
 !ATTENTION! DO NOT EVER MAKE CHANGES WHILE ON THE 'master' or 'release' BRANCHES
 All of the commands below must be run from the root directory of this repository (website).
@@ -198,6 +198,12 @@ If all looks good, stage your changes:
     $ git add .                 // This adds all changes to all files to the git staging area.
     $ git add ./path/to/file    // This adds all the changes to a specific file to the staging area
 
+After adding files to the staging area, if you would like to push them up to the remote branch, you must commit the changes first. In order to commit the changes, use the following command:
+
+```
+$ git commit -m "Meaningful message about this commit"
+```
+   
 You can now push your branch to [GitHub](https://github.com/broboticsforever/website) with the following command:
 
     $ git push
