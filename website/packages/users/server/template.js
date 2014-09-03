@@ -9,8 +9,8 @@ module.exports = {
             'http://' + req.headers.host + '/#!/reset/' + token,
             'This link will work for 1 hour or until your password is reset.',
             'If you did not ask to change your password, please ignore this email and your account will remain unchanged.'
-        ].join('\n\n');
-        mailOptions.subject = 'Resetting the password';
+        ].join('<br><br>');
+        mailOptions.subject = 'Password Reset Request from BroboticsForever.com';
         return mailOptions;
     }
 };
