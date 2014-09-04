@@ -30,12 +30,12 @@ module.exports = {
         clientSecret: 'SECRET_KEY',
         callbackURL: 'http://localhost:3000/auth/linkedin/callback'
     },
-    emailFrom : 'Brobotics Forever <broboticsforever@gmail.com>', // sender address like ABC <abc@example.com>
+    emailFrom : 'Email', // sender address like ABC <abc@example.com>
     mailer: {
-        service: 'Gmail',
+        service: 'Email',
         auth: {
-            user: 'broboticsforever@gmail.com',
-            pass: 'Br0b0tics'
+            user: 'user',
+            pass: 'password'
         }
     }
 };
