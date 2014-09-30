@@ -39,6 +39,7 @@ $ npm install -g grunt-cli
     $ cd website/website
     $ sudo npm install
     $ bower install
+    $ mean install socket
 
   We recommend using [Grunt](https://github.com/gruntjs/grunt-cli) to start the server:
 
@@ -152,25 +153,21 @@ Then, add this snippet of code to your `~/.bashrc` file (`~/.profile` for MAC OS
     
 This will change the look of your console so that you can always see which git branch you are on without having to run `git branch` all the time. Once you save the file, load the settings with this command: `source ~/.bashrc`.
 
-!ATTENTION! DO NOT EVER MAKE CHANGES WHILE ON THE 'master' or 'release' BRANCHES
+!ATTENTION! DO NOT EVER MAKE CHANGES WHILE ON THE 'master' BRANCH
 All of the commands below must be run from the root directory of this repository (website).
 
 To check all of the branches you have locally:
 
     $ git branch
 
-The branch with a * next to it is your current branch. The first thing you should do is make sure you have both the 'master' and 'release' branches. Initially, you will only have master, so to get the 'release' branch:
-
-    $ git checkout release
-    
-Then, once you want to make changes to the code, first always check that you have the latest version of the 'release' branch:
+The branch with a * next to it is your current branch. The first thing you should do is make sure you have the 'master' branch. Then make sure it is up to date:
 
     $ git pull
     
-Once you have the latest version, you can make the changes you need to, but do them on a separate branch off of 'release':
+Once you have the latest version, you can make the changes you need to, but do them on a separate branch off of 'master':
 
     $ git branch <newBranchName>    // Creates a new branch
-    $ git checkout <newBranchName>  // Switches you to your new branch. Before this, you are still on 'release'
+    $ git checkout <newBranchName>  // Switches you to your new branch. Before this, you are still on 'master'
 
 Alternatively, a single command equivalent of the above is:
 
