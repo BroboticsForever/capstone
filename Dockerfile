@@ -45,9 +45,9 @@ COPY ./scripts/startup.sh /etc/my_init.d/startup.sh
 #SETUP WEBSITE
 RUN \
   cd /root/website && \
-  bower --allow-root install && \
   npm install && \
-  mean install mean-admin
+  bower --allow-root install && \
+  mean install socket
 
 #CLEANUP
 RUN apt-get -y clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
