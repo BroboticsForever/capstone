@@ -47,7 +47,7 @@ RUN \
   cd /root/website && \
   npm install && \
   bower --allow-root install && \
-  mean install socket
+  cd ./packages/contrib/socket && npm install
 
 #CLEANUP
 RUN apt-get -y clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
