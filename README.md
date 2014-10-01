@@ -3,11 +3,25 @@
 MEAN is a boilerplate that provides a nice starting point for [MongoDB](http://www.mongodb.org/), [Node.js](http://www.nodejs.org/), [Express](http://expressjs.com/), and [AngularJS](http://angularjs.org/) based applications. It is designed to give you a quick and organized way to start developing MEAN based web apps with useful modules like Mongoose and Passport pre-bundled and configured. We mainly try to take care of the connection points between existing popular frameworks and solve common integration problems.
 
 ## Prerequisites
-* Node.js - Ubuntu: ``` $ sudo apt-get install nodejs-legacy ```
-* MongoDB - Ubuntu: [Install Mongo](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/)
+* Node.js - Ubuntu:
+```
+$ sudo add-apt-repository ppa:chris-lea/node.js
+$ sudo apt-get update
+$ sudo apt-get install nodejs
+```
+If anything goes wrong, check here: [Install Latest NodeJS](http://www.ubuntuupdates.org/ppa/chris_lea_nodejs)
+   
+* MongoDB - Ubuntu: 
+  ```
+  $ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
+  $ echo "deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen" | sudo tee -a /etc/apt/sources.list.d/10gen.list
+  $ apt-get update
+  $ apt-get -y install mongodb-10gen
+  ```
+If anything goes wrong, check here: [Install Latest MongoDB](https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-12-04)
 
 ### Tools Prerequisites
-* NPM - Node.js package manage; should be installed when you install node.js.    
+* NPM - Node.js package manager; should be installed when you `sudo apt-get install nodejs`.    
     * If not: ``` $ sudo apt-get install npm ```
 * Bower - Web package manager. Installing [Bower](http://bower.io/) is simple when you have `npm`:
 
