@@ -26,13 +26,13 @@ If anything goes wrong, check here: [Install Latest MongoDB](https://www.digital
 * Bower - Web package manager. Installing [Bower](http://bower.io/) is simple when you have `npm`:
 
 ```
-$ npm install -g bower
+$ sudo npm install -g bower
 ```
 
 ### Optional [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 * Grunt - Download and Install [Grunt](http://gruntjs.com).
 ```
-$ npm install -g grunt-cli
+$ sudo npm install -g grunt-cli
 ```
 
 ## Additional Packages (Included)
@@ -51,13 +51,13 @@ $ npm install -g grunt-cli
     $ cd ~/broboticsforever
     $ git clone https://github.com/broboticsforever/website.git
     $ cd website/website
-    $ sudo npm install
     $ bower install
-    $ mean install socket
+    $ sudo npm install
+    $ cd packages/contrib/socket && npm install
 
   We recommend using [Grunt](https://github.com/gruntjs/grunt-cli) to start the server:
 
-    $ grunt
+    $ cd ~/broboticsforever/website/website && grunt
 
   If grunt aborts because of JSHINT errors, these can be overridden with the `force` flag:
 
@@ -204,7 +204,7 @@ This command will show you all the changes you have made since your last `git ad
 If all looks good, stage your changes:
 
     $ git add .                 // This adds all changes to all files to the git staging area.
-    $ git add ./path/to/file    // This adds all the changes to a specific file to the staging area
+    $ git add /path/to/file    // This adds all the changes to a specific file to the staging area
 
 After adding files to the staging area, if you would like to push them up to the remote branch, you must commit the changes first. In order to commit the changes, use the following command:
 
@@ -216,11 +216,11 @@ You can now push your branch to [GitHub](https://github.com/broboticsforever/web
 
     $ git push
     
-NEVER do this on the 'release' or 'master' branches. It will probably complain that there is not a remote branch to push to, but git should spit out the command you should type to fix the problem. If not:
+NEVER do this on the 'master' branch. It will probably complain that there is not a remote branch to push to, but git should spit out the command you should execute to fix the problem. If not this is the command:
 
     $ git push --set-upstream origin <yourBranchName>
 
-NEVER Type 'release' or 'master' for `<yourBranchName>`! Also, never type this command at all from the 'release' or 'master' branches, this will do very bad things.
+NEVER Type 'master' for `<yourBranchName>`! Also, never type this command at all from 'master' branch, this could do very bad things.
 
 Once you have made all of your changes and wish to push your changes to the 'release' branch, you will need to issue a Pull Request. Click [here](https://github.com/broboticsforever/website) to go to GitHub and then click on the little green button on the left side next to your branch name (should be on master). You will then have to select 'release' as the base (left) and '<yourBranchName>' as the compare (right) branch. You should then be able to see all of the changes that are within your branch and how they will change the 'release' branch. If all looks good, click the green 'Create pull request' button. Give the pull request a meaningful title that is short but descriptive of the changes you made.  If you need to give further detail, explain in the comment box what you did and how to test that it works. Also, so that others on your team and check off your pull request, place the following in your comment box:
 
@@ -238,24 +238,6 @@ We pre-included an article package example. Check out:
   * [The AngularJs Service](packages/articles/public/services/articles.js) - Where we connect to our REST service.
   * [The AngularJs Controller](packages/articles/public/controllers/articles.js) - Where we take care of  our frontend logic.
   * [The AngularJs Views Folder](packages/articles/public/views) - Where we keep our CRUD views.
-
-## Heroku Quick Deployment
-Before you start make sure you have the [Heroku toolbelt](https://toolbelt.heroku.com/)
-installed and an accessible MongoDB instance - you can try [MongoHQ](http://www.mongohq.com/)
-which has an easy setup).
-
-Add the db string to the production env in server/config/env/production.js.
-
-```
-git init
-git add .
-git commit -m "initial version"
-heroku apps:create
-heroku config:add NODE_ENV=production
-heroku config:add BUILDPACK_URL=https://github.com/mbuchetics/heroku-buildpack-nodejs-grunt.git
-git push heroku master
-heroku config:set NODE_ENV=production
-```
 
 ## More Information
   * Visit us at [Linnovate.net](http://www.linnovate.net/).
