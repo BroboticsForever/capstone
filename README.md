@@ -24,9 +24,12 @@ If anything goes wrong, check here: [Install Latest MongoDB](https://www.digital
 * NPM - Node.js package manager; should be installed when you `sudo apt-get install nodejs`.    
     * If not: ``` $ sudo apt-get install npm ```
 * Bower - Web package manager. Installing [Bower](http://bower.io/) is simple when you have `npm`:
-
 ```
 $ sudo npm install -g bower
+```
+* MEAN.io - The MEAN stack boilerplate [MEAN.io](http://mean.io/):
+```
+$ sudo npm install -g meanio
 ```
 
 ### Optional [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
@@ -70,8 +73,7 @@ $ sudo npm install -g grunt-cli
   Then, open a browser and go to:
 
     http://localhost:3000
-
-
+    
 ## Troubleshooting
 During install some of you may encounter some issues.
 
