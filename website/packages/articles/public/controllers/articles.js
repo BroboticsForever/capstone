@@ -71,5 +71,15 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
                 $scope.article = article;
             });
         };
+
+        $scope.uploadFileCallback = function(file) {
+            console.log("FILE UPLOAD CALLBACK");
+            console.log(file);
+        };
+
+        $scope.uploadFinished = function(files) {
+            console.log("FILE UPLOAD CALLBACK");
+            console.log(files);
+        };
     }
 ]);
