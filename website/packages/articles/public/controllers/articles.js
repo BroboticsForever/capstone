@@ -13,7 +13,8 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
             if (isValid) {
                 var article = new Articles({
                     title: this.title,
-                    content: this.content
+                    content: this.content,
+                    images: this.images
                 });
                 article.$save(function(response) {
                     $location.path('articles/' + response._id);
@@ -74,10 +75,12 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
 
         $scope.uploadFileCallback = function(file) {
             //TODO UPLOAD FILE CALLBACK
+            var filename = file.name.toLowerCase();
 
-            if (file.name.indexOf('.doc') !== -1) {
-                file.simpletype = 'Word Document';
-                console.log($scope);
+            if (filename.indexOf('.doc') !== -1 || filename.indexOf('.pdf') !== -1) {
+                file.simpletype = 'document';
+            } else if (filename.indexOf('.jpg') !== -1 || filename.indexOf('.jpeg') !== -1 || filename.indexOf('.png') !== -1 || filename.indexOf('.gif') !== -1 ||  filename.indexOf('.bmp') !== -1) {
+                file.simpletype = 'image';
             }
 
             console.log(file);
