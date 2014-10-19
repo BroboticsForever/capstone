@@ -34,7 +34,7 @@ Upload.register(function(app, auth, database) {
     Upload.menus.add({
         title: 'Mean upload help page',
         link: 'Mean upload help page',
-        roles: ['authenticated'],
+        roles: ['admin'],
         menu: 'main'
     });
 

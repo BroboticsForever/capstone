@@ -6,6 +6,7 @@
 var mongoose = require('mongoose'),
     Article = mongoose.model('Article'),
     _ = require('lodash');
+//    mv = require('mv');
 
 
 /**
@@ -94,4 +95,13 @@ exports.all = function(req, res) {
         res.json(articles);
 
     });
+};
+
+/**
+ * Move File to correct folder
+ */
+exports.mv = function(file, dir) {
+    console.log(dir);
+    console.log(file.src);
+    //mv(file.name);
 };
