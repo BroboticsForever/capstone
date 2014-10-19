@@ -17,9 +17,11 @@
                 <div ng-show="submitted && articleForm.content.$invalid" class="help-block">
                     <p ng-show="articleForm.content.$error.required">Content is required</p>
                 </div>
+                <br>
+                <mean-upload file-dest="'/temp/'" upload-file-callback="uploadFileCallback(file)" upload-callback="uploadFinished(files)"></mean-upload>
+                <br>
             </div>
         </div>
-        <mean-upload file-dest="'/photos/'" upload-file-callback="uploadFileCallback(file)" upload-callback="uploadFinished(files)"></mean-upload>
         <div class="form-group">
             <div class="col-md-offset-3 col-md-9">
                 <button type="submit" class="btn btn-info">Submit</button>
