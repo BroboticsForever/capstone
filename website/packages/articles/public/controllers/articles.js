@@ -73,13 +73,13 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
         };
 
         $scope.uploadFileCallback = function(file) {
-            console.log("FILE UPLOAD CALLBACK");
-            console.log(file);
+            //TODO FILE UPLOAD CALLBACK
+
         };
 
         $scope.uploadFinished = function(files) {
-            console.log("FILE UPLOAD CALLBACK");
-            console.log(files);
+            //TODO UPLOAD COMPLETE CALLBACK
+
         };
     }
 ]);
