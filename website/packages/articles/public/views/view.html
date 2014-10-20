@@ -1,15 +1,29 @@
 <section data-ng-controller="ArticlesController" data-ng-init="findOne()">
-    <span>{{article.created | date:'medium'}}</span> /
-    <span>{{article.user.name}}</span>
-    <h2>{{article.title}}</h2>
-    <div data-ng-if="hasAuthorization(article)">
-        <a class="btn" href="/#!/articles/{{article._id}}/edit">
-            <i class="glyphicon glyphicon-edit"></i>
-        </a>
-        <a class="btn" data-ng-click="remove(article);">
-            <i class="glyphicon glyphicon-trash"></i>
-        </a>
-    </div>
+    <h2>
+        {{article.title}}
+        <span data-ng-if="hasAuthorization(article)">
+            <a class="btn" href="/#!/articles/{{article._id}}/edit">
+                <i class="glyphicon glyphicon-edit"></i>
+            </a>
+            <a class="btn" data-ng-click="remove(article);">
+                <i class="glyphicon glyphicon-trash"></i>
+            </a>
+        </span>
+    </h2>
+    <div>Posted by: <strong>{{article.user.name}}</strong> - {{article.created | date:'medium'}}</div>
+    <br>
+    Article Content:
     <div>{{article.content}}</div>
+    <br>
+    Documents:
+    <div ng-repeat="document in article.documents">
+        <a href="{{document.src}}">{{document.name}}</a>
+    </div>
+    <br>
+    Images:
+    <div ng-repeat="image in article.images">
+        <img ng-src="{{image.src}}">
+    </div>
+    <br>
     <div ng-if="article !== undefined" ng-include="'comments/views/index.html'" data-ng-controller="CommentsController" data-ng-init="findComments(article, 5)"/>
 </section>

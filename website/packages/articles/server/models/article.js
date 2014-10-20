@@ -28,6 +28,14 @@ var ArticleSchema = new Schema({
     user: {
         type: Schema.ObjectId,
         ref: 'User'
+    },
+    images: {
+        type: Array,
+        required: false
+    },
+    documents: {
+        type: Array,
+        require: false
     }
 });
 

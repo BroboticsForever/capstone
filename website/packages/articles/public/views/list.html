@@ -1,8 +1,6 @@
 <section data-ng-controller="ArticlesController" data-ng-init="find()">
     <ul class="articles unstyled">
         <li data-ng-repeat="article in articles">
-            <span>{{article.created | date:'medium'}}</span> /
-            <span>{{article.user.name}}</span>
             <h2>
                 <a data-ng-href="#!/articles/{{article._id}}">{{article.title}}</a>
                 <span data-ng-if="hasAuthorization(article)">
@@ -14,7 +12,27 @@
                     </a>
                 </span>
             </h2>
+            <div>Posted by: <strong>{{article.user.name}}</strong> - {{article.created | date:'medium'}}</div>
+            <br>
             <div>{{article.content}}</div>
+            <br>
+            <div ng-show="article.documents">
+                Documents:
+                <div ng-repeat="document in article.documents">
+                    <div>
+                        <a href="{{document.src}}">{{document.name}}</a>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div ng-show="article.images">
+                Images:
+                <div>
+                    <img ng-src="{{article.images[0].src}}">
+                </div>
+                <br>
+                <div ng-show="article.images[1]"><a data-ng-href="#!/articles/{{article._id}}">Open</a> this article to see more images.<br><br></div>
+            </div>
             <div ng-if="article !== undefined" ng-include="'comments/views/index.html'" data-ng-controller="CommentsController" data-ng-init="findComments(article, 2)"/>
         </li>
     </ul>
