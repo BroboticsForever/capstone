@@ -12,11 +12,11 @@
                     </a>
                 </span>
             </h2>
-            <div>Posted by: <strong>{{article.user.name}}</strong> - {{article.created | date:'medium'}}</div>
+            <div><strong>Posted by: {{article.user.name}} - {{article.created | date:'medium'}}</strong></div>
             <br>
             <div>{{article.content}}</div>
             <br>
-            <div ng-show="article.documents">
+            <div ng-show="article.documents.length !== 0">
                 Documents:
                 <div ng-repeat="document in article.documents">
                     <div>
@@ -25,7 +25,7 @@
                 </div>
                 <br>
             </div>
-            <div ng-show="article.images">
+            <div ng-show="article.images.length !== 0">
                 Images:
                 <div>
                     <img ng-src="{{article.images[0].src}}">

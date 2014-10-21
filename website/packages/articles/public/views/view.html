@@ -10,20 +10,23 @@
             </a>
         </span>
     </h2>
-    <div>Posted by: <strong>{{article.user.name}}</strong> - {{article.created | date:'medium'}}</div>
+    <div><strong>Posted by: {{article.user.name}} - {{article.created | date:'medium'}}</strong></div>
     <br>
-    Article Content:
     <div>{{article.content}}</div>
     <br>
-    Documents:
-    <div ng-repeat="document in article.documents">
-        <a href="{{document.src}}">{{document.name}}</a>
+    <div ng-show="article.documents.length !== 0">
+        Documents:
+        <div ng-repeat="document in article.documents">
+            <a href="{{document.src}}">{{document.name}}</a>
+        </div>
+        <br>
     </div>
-    <br>
-    Images:
-    <div ng-repeat="image in article.images">
-        <img ng-src="{{image.src}}">
+    <div ng-show="article.images.length !== 0">
+        Images:
+        <div ng-repeat="image in article.images">
+            <img ng-src="{{image.src}}">
+        </div>
+        <br>
     </div>
-    <br>
     <div ng-if="article !== undefined" ng-include="'comments/views/index.html'" data-ng-controller="CommentsController" data-ng-init="findComments(article, 5)"/>
 </section>

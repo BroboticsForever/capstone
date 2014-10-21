@@ -77,7 +77,6 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
         };
 
         $scope.uploadFileCallback = function(file) {
-            //TODO UPLOAD FILE CALLBACK
             var filename = file.name.toLowerCase();
 
             if (filename.indexOf('.doc') !== -1 || filename.indexOf('.pdf') !== -1) {
@@ -88,7 +87,6 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
         };
 
         $scope.uploadFinished = function(files) {
-            //TODO UPLOAD FINISHED CALLBACK
             var images = [],
                 documents = [];
 
