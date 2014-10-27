@@ -36,7 +36,7 @@ RUN chown root /etc/service/mongo/run
 #INSTALL GRUNT-CLI && BOWER
 RUN npm install -g grunt-cli
 RUN npm install -g bower
-RUN npm install -g meanio
+RUN npm install -g mean-cli
 
 #COPY WEBSITE AND SCRIPTS
 COPY ./website /root/website
