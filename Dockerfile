@@ -46,8 +46,7 @@ COPY ./scripts/startup.sh /etc/my_init.d/startup.sh
 RUN \
   cd /root/website && \
   npm install && \
-  bower --allow-root install && \
-  cd ./packages/contrib/socket && npm install
+  bower --allow-root install
 
 #CLEANUP
 RUN apt-get -y clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
