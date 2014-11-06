@@ -38,7 +38,7 @@ Comments.register(function(app, auth, database, socket) {
   Comments.menus.add({
     title: 'comments help page',
     link: 'comments help page',
-    roles: ['authenticated'],
+    roles: ['admin'],
     menu: 'main'
   });
 

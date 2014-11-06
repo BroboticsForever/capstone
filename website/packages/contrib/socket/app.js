@@ -21,7 +21,7 @@ MeanSocket.register(function(app, auth, database, http) {
 
     //We are adding a link to the main menu for all authenticated users
     MeanSocket.menus.add({
-        title: 'Mean Socket',
+        title: 'Discussion',
         link: 'Mean socket help page',
         roles: ['authenticated'],
         menu: 'main'
