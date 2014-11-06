@@ -46,7 +46,15 @@ COPY ./scripts/startup.sh /etc/my_init.d/startup.sh
 RUN \
   cd /root/website && \
   npm install && \
-  bower --allow-root install
+  bower --allow-root install && \
+  cd packages/contrib/mean-admin && \
+  npm install && \
+  cd ../socket && \
+  npm install && \
+  cd ../upload && \
+  npm install && \
+  cd ../comments && \
+  npm install
 
 #CLEANUP
 RUN apt-get -y clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
