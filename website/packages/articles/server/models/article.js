@@ -36,6 +36,10 @@ var ArticleSchema = new Schema({
     documents: {
         type: Array,
         require: false
+    },
+    notifyUsers: {
+        type: Boolean,
+        required: true
     }
 });
 

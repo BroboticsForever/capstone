@@ -3,6 +3,7 @@
 angular.module('mean.articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', 'Global', 'Articles',
     function($scope, $stateParams, $location, Global, Articles) {
         $scope.global = Global;
+        $scope.notifyUsers = false;
 
         $scope.hasAuthorization = function(article) {
             if (!article || !article.user) return false;
@@ -15,7 +16,8 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
                     title: this.title,
                     content: this.content,
                     images: $scope.images,
-                    documents: $scope.documents
+                    documents: $scope.documents,
+                    notifyUsers: $scope.notifyUsers
                 });
                 article.$save(function(response) {
                     $location.path('articles/' + response._id);
@@ -25,6 +27,7 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
                 this.content = '';
                 $scope.images = [];
                 $scope.documents = [];
+                $scope.notifyUsers = false;
             } else {
                 $scope.submitted = true;
             }
