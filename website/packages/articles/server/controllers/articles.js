@@ -5,7 +5,11 @@
  */
 var mongoose = require('mongoose'),
     Article = mongoose.model('Article'),
-    _ = require('lodash');
+    User = mongoose.model('User'),
+    _ = require('lodash'),
+    nodemailer = require('nodemailer'),
+    templates = require('../template'),
+    config = require('meanio').loadConfig();
 
 /**
  * Find article by id
@@ -20,6 +24,17 @@ exports.article = function(req, res, next, id) {
 };
 
 /**
+ * Send email
+ */
+function sendMail(mailOptions) {
+    var transport = nodemailer.createTransport('SMTP', config.mailer);
+    transport.sendMail(mailOptions, function(err, response) {
+        if (err) return err;
+        return response;
+    });
+}
+
+/**
  * Create an article
  */
 exports.create = function(req, res) {
@@ -32,8 +47,24 @@ exports.create = function(req, res) {
                 error: 'Cannot save the article'
             });
         }
+
         res.json(article);
 
+        if (article.notifyUsers) {
+            User.find().exec(function(err, users) {
+                if (!err) {
+                    for (var i = 0; i < users.length; i++) {
+                        var mailOptions = {
+                            to: users[i].email,
+                            from: config.emailFrom
+                        };
+
+                        mailOptions = templates.new_article_email(req, article, mailOptions);
+                        sendMail(mailOptions);
+                    }
+                }
+            });
+        }
     });
 };
 

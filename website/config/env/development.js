@@ -3,7 +3,7 @@
 module.exports = {
     db: 'mongodb://localhost/mean-dev',
     app: {
-        name: 'MEAN - FullStack JS - Development'
+        name: 'Brobotics Forever - Development'
     },
     facebook: {
         clientID: 'APP_ID',
@@ -30,7 +30,7 @@ module.exports = {
         clientSecret: 'SECRET_KEY',
         callbackURL: 'http://localhost:3000/auth/linkedin/callback'
     },
-    emailFrom : 'Email', // sender address like ABC <abc@example.com>
+    emailFrom : 'email', // sender address like ABC <abc@example.com>
     mailer: {
         service: 'Email',
         auth: {
