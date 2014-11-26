@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "connect-multiparty": "latest",
+    "gm": "^1.17.0",
     "mean-health": "~0.1.2"
   },
   "license": "MIT",
