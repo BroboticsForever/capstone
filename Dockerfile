@@ -33,10 +33,13 @@ RUN echo "bind_ip = 0.0.0.0" >> /etc/mongodb.conf
 ADD ./scripts/run_mongo.sh /etc/service/mongo/run
 RUN chown root /etc/service/mongo/run
 
-#INSTALL GRUNT-CLI && BOWER
+#INSTALL GRUNT-CLI, BOWER, AND MEAN-CLI
 RUN npm install -g grunt-cli
 RUN npm install -g bower
 RUN npm install -g mean-cli
+
+#INSTALL WEBSITE DEPENDENCIES
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install imagemagick
 
 #COPY WEBSITE AND SCRIPTS
 COPY ./website /root/website
