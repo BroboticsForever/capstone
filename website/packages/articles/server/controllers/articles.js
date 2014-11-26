@@ -59,7 +59,7 @@ exports.create = function(req, res) {
                             from: config.emailFrom
                         };
 
-                        mailOptions = templates.new_article_email(req, article, mailOptions);
+                        mailOptions = templates.new_article_email(req, users[i], article, mailOptions);
                         sendMail(mailOptions);
                     }
                 }

@@ -1,11 +1,11 @@
 'use strict';
 
 module.exports = {
-    new_article_email: function(req, article, mailOptions) {
+    new_article_email: function(req, user, article, mailOptions) {
         mailOptions.subject = 'Brobotics Forever - New article posted!';
 
         mailOptions.html = [
-            'Hello ' + req.user.name + ',',
+            'Hello ' + user.name + ',',
             '',
             'A new article has been posted on BroboticsForever.com:',
             '<h2>' + article.title + '</h2>',
