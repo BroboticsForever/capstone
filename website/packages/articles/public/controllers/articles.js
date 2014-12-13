@@ -82,7 +82,7 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
         $scope.uploadFileCallback = function(file) {
             var filename = file.name.toLowerCase();
 
-            if (filename.indexOf('.doc') !== -1 || filename.indexOf('.pdf') !== -1) {
+            if (filename.indexOf('.doc') !== -1 || filename.indexOf('.pdf') !== -1 || filename.indexOf('.ppt') !== -1) {
                 file.simpletype = 'document';
             } else if (filename.indexOf('.jpg') !== -1 || filename.indexOf('.jpeg') !== -1 || filename.indexOf('.png') !== -1 || filename.indexOf('.gif') !== -1 ||  filename.indexOf('.bmp') !== -1) {
                 file.simpletype = 'image';
