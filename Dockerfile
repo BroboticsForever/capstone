@@ -63,7 +63,7 @@ RUN \
 RUN apt-get -y clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 #EXPOSE PORTS
-EXPOSE 80
+EXPOSE 9009
 
 #USE PHUSION INIT SYSTEM
 CMD ["/sbin/my_init"]
