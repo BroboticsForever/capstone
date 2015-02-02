@@ -3,10 +3,11 @@
 MEAN is a boilerplate that provides a nice starting point for [MongoDB](http://www.mongodb.org/), [Node.js](http://www.nodejs.org/), [Express](http://expressjs.com/), and [AngularJS](http://angularjs.org/) based applications. It is designed to give you a quick and organized way to start developing MEAN based web apps with useful modules like Mongoose and Passport pre-bundled and configured. We mainly try to take care of the connection points between existing popular frameworks and solve common integration problems.
 
 ## Prerequisites
-* Node.js - Ubuntu:
+* Node.js - Ubuntu
+   * NodeJS has teamed up with Chris Lea, so you will need to set up the PPA.
+   * Run this script from [this website](https://nodesource.com/blog/chris-lea-joins-forces-with-nodesource)
 ```
-$ sudo add-apt-repository ppa:chris-lea/node.js
-$ sudo apt-get update
+$ curl -sL https://deb.nodesource.com/setup | sudo bash -
 $ sudo apt-get install nodejs
 ```
 If anything goes wrong, check here: [Install Latest NodeJS](http://www.ubuntuupdates.org/ppa/chris_lea_nodejs)
