@@ -1,15 +1,14 @@
 #DOCKER VERSION 1.1.2
-FROM phusion/baseimage:0.9.12
+FROM phusion/baseimage:0.9.16
 MAINTAINER Ian Tait <thetaiter@ku.edu>
 
 #INITIAL SETUP
 ENV HOME /root
 
 RUN mkdir -p /etc/my_init.d
-RUN add-apt-repository ppa:chris-lea/node.js
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 RUN echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | tee /etc/apt/sources.list.d/10gen.list
-RUN apt-get update 
+RUN curl -sL https://deb.nodesource.com/setup | bash - 
 
 #INSTALL BUILD ESSENTIALS
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install gcc make build-essential
