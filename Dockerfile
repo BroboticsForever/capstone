@@ -6,6 +6,7 @@ MAINTAINER Ian Tait <thetaiter@ku.edu>
 ENV HOME /root
 
 RUN mkdir -p /etc/my_init.d
+RUN mkdir -p /root/libs
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 RUN echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | tee /etc/apt/sources.list.d/10gen.list
 RUN curl -sL https://deb.nodesource.com/setup | bash - 
@@ -38,7 +39,17 @@ RUN npm install -g bower
 RUN npm install -g mean-cli
 
 #INSTALL WEBSITE DEPENDENCIES
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install imagemagick
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install imagemagick wget
+RUN \
+  cd /root/libs && \
+  wget http://python.org/ftp/python/2.7.5/Python-2.7.5.tgz && \
+  tar -xvf Python-2.7.5.tgz && \
+  cd Python-2.7.5 && \
+  ./configure && \
+  make && \
+  make install && \
+  cd .. && \
+  rm Python-2.7.5.tgz
 
 #COPY WEBSITE AND SCRIPTS
 COPY ./website /root/website
